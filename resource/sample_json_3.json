@@ -1,0 +1,81 @@
+{
+	"type": "object",
+	"properties": {
+		"trainingData": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"country": {
+						"type": "string",
+						"enum": [
+							"Vietnam",
+							"Morocco",
+							"Korea",
+							"Australia",
+							"Other"
+						]
+					},
+					"date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"data": {
+						"type": "object",
+						"properties": {
+							"field1": {
+								"type": "string"
+							},
+							"field2": {
+								"type": "number"
+							},
+							"field3": {
+								"type": "boolean"
+							}
+						},
+						"required": [
+							"field1",
+							"field2",
+							"field3"
+						]
+					},
+					"issues": {
+						"type": "object",
+						"properties": {
+							"dateFormatIssue": {
+								"type": "boolean"
+							},
+							"countryDataIssue": {
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				"required": [
+					"country",
+					"date",
+					"data"
+				]
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"createdBy": {
+					"type": "string"
+				},
+				"createdAt": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"version": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"required": [
+		"trainingData",
+		"metadata"
+	]
+}
